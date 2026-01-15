@@ -1,0 +1,343 @@
+/* Speed Quiz Theme */
+:root {
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --neon-green: #0aff00;
+}
+
+.app-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.home-btn {
+    position: absolute;
+    left: 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.home-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.game-board {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+/* Score Board */
+.score-board {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+}
+
+.score-label {
+    display: block;
+    font-size: 1rem;
+    color: var(--neon-blue);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#score-display {
+    font-family: 'Black Ops One', cursive;
+    /* Military/Digital style */
+    font-size: 4rem;
+    color: white;
+    line-height: 1;
+}
+
+/* Timer */
+.timer-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-text {
+    font-family: 'Black Ops One', monospace;
+    font-size: 12rem;
+    color: white;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    line-height: 1;
+    margin-bottom: 2rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-text.warning {
+    color: #ff3333;
+    animation: pulse 1s infinite alternate;
+    text-shadow: 0 0 30px rgba(255, 51, 51, 0.5);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.timer-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.control-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.control-btn:active {
+    transform: translateY(2px);
+}
+
+.control-btn.primary {
+    background: var(--neon-blue);
+    color: #000;
+}
+
+.control-btn.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.control-btn.warning {
+    background: #ff3333;
+    color: white;
+}
+
+.control-btn.icon-only {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Game Controls (Bottom) */
+.game-controls {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* Pass is smaller? Or equal? Let's make Correct bigger */
+    gap: 1.5rem;
+    height: 150px;
+}
+
+.game-btn {
+    border: none;
+    border-radius: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: transform 0.1s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.game-btn:active {
+    transform: scale(0.95);
+}
+
+.game-btn.pass {
+    background: #475569;
+    box-shadow: 0 8px 0 #1e293b;
+    color: #cbd5e1;
+}
+
+.game-btn.correct {
+    background: #22c55e;
+    box-shadow: 0 8px 0 #15803d;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #334155;
+    padding: 2rem;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    border: 2px solid var(--neon-blue);
+}
+
+.input-group {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 80px;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Game Over Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(220, 38, 38, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    animation: flashRed 0.5s infinite alternate;
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+.game-over-content {
+    text-align: center;
+    color: white;
+    animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.game-over-content h1 {
+    font-size: 5rem;
+    margin-bottom: 0;
+}
+
+.game-over-content p {
+    font-size: 2rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.final-score {
+    font-size: 8rem;
+    font-weight: 900;
+    margin: 1rem 0;
+    font-family: 'Black Ops One', cursive;
+}
+
+.control-btn.white {
+    background: white;
+    color: #dc2626;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+}
+
+@keyframes flashRed {
+    from {
+        background: rgba(220, 38, 38, 0.9);
+    }
+
+    to {
+        background: rgba(185, 28, 28, 0.95);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timer-text {
+        font-size: 6rem;
+    }
+
+    .game-controls {
+        height: 100px;
+    }
+
+    .game-btn {
+        font-size: 1.5rem;
+    }
+}
