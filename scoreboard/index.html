@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모둠 점수판 - 대웅이의 수업 도구</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Outfit:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="app-container">
+        <header>
+            <a href="../index.html" class="home-btn" title="홈으로 돌아가기">
+                <span class="icon">🏠</span> Home
+            </a>
+            <h1>🏆 모둠 점수판</h1>
+            <div class="header-controls">
+                <button id="reset-all-btn" class="control-btn warning">
+                    🔄 전체 초기화
+                </button>
+                <button id="add-group-btn" class="control-btn primary">
+                    ➕ 모둠 추가
+                </button>
+            </div>
+        </header>
+
+        <main class="scoreboard-grid" id="scoreboard">
+            <!-- Groups will be generated here by JS -->
+            <div class="empty-state">
+                모둠이 없습니다. '모둠 추가' 버튼을 눌러 시작하세요!
+            </div>
+        </main>
+    </div>
+
+    <script src="../bg-animation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
