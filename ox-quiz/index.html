@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OX 퀴즈 판 - 대웅이의 수업 도구</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Noto+Sans+KR:wght@400;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="app-container">
+        <header>
+            <a href="../index.html" class="home-btn" title="홈으로 돌아가기">
+                <span class="icon">🏠</span> Home
+            </a>
+            <h1>⭕ OX 퀴즈 판 ❌</h1>
+        </header>
+
+        <main class="quiz-board">
+            <!-- Question Display Area -->
+            <div class="question-area">
+                <textarea id="question-input" placeholder="여기에 문제를 입력하세요..." spellcheck="false"></textarea>
+
+                <!-- Overlay for Answer -->
+                <div id="answer-overlay" class="answer-overlay hidden">
+                    <div id="answer-mark" class="mark"></div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls-area">
+                <div class="selection-group">
+                    <span class="label">정답 설정:</span>
+                    <label class="radio-label">
+                        <input type="radio" name="answer" value="O">
+                        <span class="radio-btn blue">⭕ O</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="answer" value="X">
+                        <span class="radio-btn red">❌ X</span>
+                    </label>
+                </div>
+
+                <div class="action-group">
+                    <button id="reveal-btn" class="control-btn primary">✨ 정답 공개</button>
+                    <button id="reset-btn" class="control-btn warning">🔄 다시 하기</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../bg-animation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

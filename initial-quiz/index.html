@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초성 퀴즈 생성기 - 대웅이의 수업 도구</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Noto+Sans+KR:wght@400;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="app-container">
+        <header>
+            <a href="../index.html" class="home-btn" title="홈으로 돌아가기">
+                <span class="icon">🏠</span> Home
+            </a>
+            <h1>🧩 초성 퀴즈 생성기</h1>
+        </header>
+
+        <main class="quiz-interaction">
+            <div class="display-area" id="display-area">
+                <div class="placeholder-text">선생님이 문제를 내주세요!</div>
+            </div>
+
+            <div class="controls-area">
+                <div class="input-group">
+                    <input type="text" id="quiz-input" placeholder="단어 또는 문장을 입력하세요 (예: 맛있는 사과)" autocomplete="off">
+                </div>
+
+                <div class="button-group">
+                    <button id="generate-btn" class="control-btn primary">❓ 문제 생성</button>
+                    <button id="answer-btn" class="control-btn success" disabled>⭕ 정답 확인</button>
+                    <button id="reset-btn" class="control-btn warning">🔄 다시 하기</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../bg-animation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

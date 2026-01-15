@@ -1,0 +1,221 @@
+/* Cho-sung Quiz Theme */
+.app-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.home-btn {
+    position: absolute;
+    left: 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.home-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-family: 'Gaegu', cursive;
+    font-size: 2.5rem;
+    color: white;
+    margin: 0;
+}
+
+.quiz-interaction {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Display Area */
+.display-area {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.placeholder-text {
+    font-size: 2rem;
+    color: #94a3b8;
+    font-family: 'Gaegu', cursive;
+}
+
+.quiz-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 900;
+    font-size: 8rem;
+    /* Very Large! */
+    color: #1e293b;
+    word-break: keep-all;
+    line-height: 1.2;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.answer-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+    color: var(--primary-color);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Controls */
+.controls-area {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+#quiz-input {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    font-family: 'Noto Sans KR', sans-serif;
+    outline: none;
+    transition: all 0.2s;
+}
+
+#quiz-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.control-btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.control-btn:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.control-btn:disabled {
+    background: #cbd5e1;
+    color: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.control-btn.primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.control-btn.primary:hover {
+    background: #4f46e5;
+}
+
+.control-btn.success {
+    background: #22c55e;
+    color: white;
+}
+
+.control-btn.success:hover {
+    background: #16a34a;
+}
+
+.control-btn.warning {
+    background: #eab308;
+    color: white;
+}
+
+.control-btn.warning:hover {
+    background: #ca8a04;
+}
+
+/* Responsive Text Size */
+@media (max-width: 768px) {
+    .quiz-text {
+        font-size: 4rem;
+    }
+
+    .answer-text {
+        font-size: 3rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}
