@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 스마트 자리 배치</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Import global styles -->
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas> <!-- Reuse global background -->
+    <div class="app-container">
+        <header>
+            <a href="../index.html" class="home-btn">← Home</a>
+            <h1>AI 스마트 자리 배치</h1>
+        </header>
+
+        <main class="layout-wrapper">
+            <!-- Sidebar / Input Area -->
+            <aside class="sidebar-controls">
+                <div class="panel glass-panel">
+                    <h3>학생 명단 입력</h3>
+                    <p class="instruction">번호 순서대로 이름을 입력하세요 (줄바꿈으로 구분)</p>
+                    <textarea id="name-input" placeholder="1. 김철수&#10;2. 이영희&#10;3. 박민수..."></textarea>
+
+                    <div class="input-actions">
+                        <button id="reset-btn" class="secondary-btn">초기화</button>
+                        <button id="load-sample-btn" class="text-btn">예시 넣기</button>
+                    </div>
+                </div>
+
+                <div class="panel glass-panel">
+                    <h3>배치 모드</h3>
+                    <div class="mode-selector">
+                        <button class="mode-btn active" data-mode="general">일반형 (줄)</button>
+                        <button class="mode-btn" data-mode="group">모둠형</button>
+                        <button class="mode-btn" data-mode="discussion">토론형 (대형)</button>
+                    </div>
+
+                    <div class="action-area">
+                        <button id="shuffle-btn" class="primary-btn">
+                            <span class="icon">🎲</span> 랜덤 배치 시작
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Display Area -->
+            <section class="display-area glass-panel">
+                <div class="shroud hidden" id="loading-shroud">
+                    <div class="loader">AI Analyzing...</div>
+                </div>
+                <div class="lectern">교탁</div>
+                <div id="seat-grid" class="seat-grid layout-general">
+                    <!-- Seats will be generated here -->
+                    <div class="empty-state">학생 명단을 입력하고 배치를 시작해보세요!</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Reuse global background script if applicable, or just let the script handle its logic if independent -->
+    <script src="../bg-animation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
