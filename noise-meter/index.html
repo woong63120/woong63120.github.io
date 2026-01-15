@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교실 소음 측정기 - 대웅이의 수업 도구</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="app-container">
+        <header>
+            <a href="../index.html" class="home-btn">← Home</a>
+            <h1>🤫 교실 소음 측정기</h1>
+        </header>
+
+        <main class="noise-wrapper">
+            <!-- Left Panel: Controls -->
+            <aside class="controls-panel glass-panel">
+                <div class="control-group">
+                    <label for="sensitivity">마이크 민감도</label>
+                    <input type="range" id="sensitivity" min="0" max="100" value="50">
+                    <p class="help-text">주변 소음데 따라 조절해주세요.</p>
+                </div>
+
+                <div class="control-group">
+                    <label for="threshold">경고 기준 (임계값)</label>
+                    <input type="range" id="threshold" min="0" max="100" value="70">
+                    <p class="help-text">이 값을 넘으면 경고가 뜹니다.</p>
+                </div>
+
+                <button id="start-btn" class="primary-btn">🎤 측정 시작</button>
+            </aside>
+
+            <!-- Center Panel: Gauge -->
+            <section class="gauge-section">
+                <div class="traffic-light">
+                    <div class="light red" id="light-red"><span class="label">시끄러워요!</span></div>
+                    <div class="light yellow" id="light-yellow"><span class="label">주의해요</span></div>
+                    <div class="light green active" id="light-green"><span class="label">좋아요</span></div>
+                </div>
+
+                <div class="meter-bar-container">
+                    <div class="meter-bar" id="meter-bar"></div>
+                    <div class="threshold-line" id="threshold-line"></div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Status -->
+            <aside class="status-panel">
+                <div class="current-status" id="status-text">
+                    준비됨
+                </div>
+                <div class="decibel-display">
+                    <span id="vol-level">0</span>%
+                </div>
+            </aside>
+        </main>
+
+        <!-- Alert Overlay -->
+        <div id="alert-overlay" class="alert-overlay hidden">
+            <div class="alert-box">
+                <h1>🤫 쉿! 너무 시끄러워요!</h1>
+                <p>목소리를 조금만 낮춰주세요.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../bg-animation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
