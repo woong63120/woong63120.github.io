@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris 2D Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <a href="../index.html" class="home-btn">← Home</a>
+    <div class="game-container">
+        <div class="game-area">
+            <canvas id="tetris" width="240" height="400"></canvas>
+            <div class="overlay" id="start-overlay">
+                <h1>TETRIS</h1>
+                <p>Press Enter to Start</p>
+            </div>
+            <div class="overlay hidden" id="game-over-overlay">
+                <h1>GAME OVER</h1>
+                <p id="final-score">Score: 0</p>
+                <button onclick="resetGame()">Try Again</button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="panel">
+                <h2>Score</h2>
+                <div id="score">0</div>
+            </div>
+            <div class="panel">
+                <h2>Level</h2>
+                <div id="level">1</div>
+            </div>
+            <div class="panel">
+                <h2>Next</h2>
+                <canvas id="next-piece" width="100" height="100"></canvas>
+            </div>
+            <div class="controls-info">
+                <h3>Controls</h3>
+                <p>🡠 🡢 : Move</p>
+                <p>🡡 : Rotate</p>
+                <p>🡣 : Soft Drop</p>
+                <p>Space : Hard Drop</p>
+                <p>P : Pause</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

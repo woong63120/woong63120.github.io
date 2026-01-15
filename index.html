@@ -3,49 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tetris 2D Premium</title>
+    <title>Woong's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="game-container">
-        <div class="game-area">
-            <canvas id="tetris" width="240" height="400"></canvas>
-            <div class="overlay" id="start-overlay">
-                <h1>TETRIS</h1>
-                <p>Press Enter to Start</p>
-            </div>
-            <div class="overlay hidden" id="game-over-overlay">
-                <h1>GAME OVER</h1>
-                <p id="final-score">Score: 0</p>
-                <button onclick="resetGame()">Try Again</button>
-            </div>
-        </div>
-        
-        <div class="sidebar">
-            <div class="panel">
-                <h2>Score</h2>
-                <div id="score">0</div>
-            </div>
-            <div class="panel">
-                <h2>Level</h2>
-                <div id="level">1</div>
-            </div>
-            <div class="panel">
-                <h2>Next</h2>
-                <canvas id="next-piece" width="100" height="100"></canvas>
-            </div>
-            <div class="controls-info">
-                <h3>Controls</h3>
-                <p>🡠 🡢 : Move</p>
-                <p>🡡 : Rotate</p>
-                <p>🡣 : Soft Drop</p>
-                <p>Space : Hard Drop</p>
-                <p>P : Pause</p>
-            </div>
-        </div>
-    </div>
+    <div class="container">
+        <header>
+            <div class="logo">Woong.dev</div>
+            <nav>
+                <!-- Add nav items if needed -->
+            </nav>
+            <a href="https://github.com/woong63120" target="_blank" class="project-link">GitHub</a>
+        </header>
 
+        <main>
+            <section class="hero">
+                <h1>Creative Developer &<br>Game Enthusiast.</h1>
+                <p>Welcome to my playground. Here I build interactive experiences and experiment with web technologies.</p>
+                <a href="#projects" class="cta-button">View Projects</a>
+            </section>
+
+            <section id="projects" class="projects">
+                <h2>Featured Projects</h2>
+                <div class="project-grid">
+                    <!-- Project 1: Tetris -->
+                    <article class="project-card">
+                        <h3 class="project-title">Classic Tetris</h3>
+                        <p class="project-desc">A retro-style 2D Tetris game built with vanilla JavaScript and HTML5 Canvas. Features score tracking, levels, and next piece preview.</p>
+                        <a href="./tetris/index.html" class="project-link">Play Now <span>→</span></a>
+                    </article>
+                    
+                    <!-- Placeholder for future projects -->
+                    <article class="project-card" style="opacity: 0.7;">
+                        <h3 class="project-title">Coming Soon</h3>
+                        <p class="project-desc">More exciting projects are in the works. Stay tuned!</p>
+                        <span class="project-link">In Development...</span>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Woong. All rights reserved.</p>
+        </footer>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
