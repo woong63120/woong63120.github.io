@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>발표 번호 뽑기 - 대웅이의 수업 도구</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="app-container">
+        <header>
+            <a href="../index.html" class="home-btn">← Home</a>
+            <h1>발표 번호 뽑기</h1>
+        </header>
+
+        <main class="picker-wrapper">
+            <div class="sky">
+                <!-- Selected Number Ball appears here -->
+                <div id="result-ball" class="ball hidden">
+                    <span id="result-num">?</span>
+                </div>
+
+                <div class="clouds">
+                    <div class="cloud c1"></div>
+                    <div class="cloud c2"></div>
+                </div>
+            </div>
+
+            <div class="ground-controls">
+                <div class="cannon-container">
+                    <div class="cannon-barrel" id="cannon"></div>
+                    <div class="cannon-base"></div>
+                </div>
+
+                <div class="controls-panel glass-panel">
+                    <label for="max-num">마지막 번호 (학생 수)</label>
+                    <div class="input-row">
+                        <input type="number" id="max-num" value="30" min="1" max="99">
+                        <span class="unit">번</span>
+                    </div>
+                    <button id="fire-btn" class="fire-btn">발사! 🚀</button>
+                    <button id="reset-btn" class="reset-btn">다시 하기</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../bg-animation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
