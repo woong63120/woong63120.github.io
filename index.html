@@ -26,6 +26,52 @@
                 <a href="#projects" class="cta-button">도구 보기</a>
             </section>
 
+            <section class="dashboard">
+                <div class="dashboard-card" id="date-card">
+                    <h3>오늘의 날짜</h3>
+                    <div class="card-content">
+                        <p id="current-date">Loading...</p>
+                        <p id="current-time">Loading...</p>
+                    </div>
+                </div>
+                <div class="dashboard-card" id="quote-card">
+                    <h3>오늘의 명언</h3>
+                    <div class="card-content">
+                        <p id="quote-text">Loading...</p>
+                        <p id="quote-author"></p>
+                    </div>
+                </div>
+                <div class="dashboard-card" id="weather-card">
+                    <h3>내 주변 날씨</h3>
+                    <div class="weather-controls">
+                        <select id="city-select">
+                            <option value="seoul">서울</option>
+                            <option value="busan">부산</option>
+                            <option value="incheon">인천</option>
+                            <option value="daegu">대구</option>
+                            <option value="daejeon">대전</option>
+                            <option value="gwangju">광주</option>
+                            <option value="ulsan">울산</option>
+                            <option value="jeju">제주</option>
+                        </select>
+                    </div>
+                    <div class="card-content" id="weather-info">
+                        <div id="weather-icon"></div>
+                        <div id="weather-temp">--°C</div>
+                        <div id="weather-desc">날씨 정보 로딩 중...</div>
+                    </div>
+                </div>
+                <div class="dashboard-card" id="countdown-card">
+                    <h3>방학 D-Day</h3>
+                    <div class="card-content">
+                        <div id="countdown-display">D-Day</div>
+                        <button id="set-date-btn">날짜 설정</button>
+                        <input type="date" id="target-date-picker"
+                            style="position: absolute; opacity: 0; pointer-events: none; bottom: 0; left: 0;">
+                    </div>
+                </div>
+            </section>
+
             <section id="projects" class="projects">
                 <h2>주요 수업 도구들</h2>
                 <div class="project-grid">

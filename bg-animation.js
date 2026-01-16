@@ -8,7 +8,15 @@ function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
 }
-window.addEventListener('resize', resize);
+// Debounce resize to prevent too many re-calculations and flicker
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        resize();
+        init();
+    }, 200);
+});
 resize();
 
 class Particle {
