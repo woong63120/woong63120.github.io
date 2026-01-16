@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나대웅의 AI 홈페이지</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="container">
+        <header>
+            <div class="logo">Woong.dev</div>
+            <nav>
+                <!-- Add nav items if needed -->
+            </nav>
+            <a href="https://github.com/woong63120" target="_blank" class="project-link">GitHub</a>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>대웅이의 수업 도구</h1>
+                <p>인공지능과 웹 기술의 융합을 탐구합니다. 데이터와 코드로 새로운 가치를 만들어냅니다.</p>
+                <a href="#projects" class="cta-button">도구 보기</a>
+            </section>
+
+            <section class="dashboard">
+                <div class="dashboard-card" id="date-card">
+                    <h3>오늘의 날짜</h3>
+                    <div class="card-content">
+                        <p id="current-date">Loading...</p>
+                        <p id="current-time">Loading...</p>
+                    </div>
+                </div>
+                <div class="dashboard-card" id="quote-card">
+                    <h3>오늘의 명언</h3>
+                    <div class="card-content">
+                        <p id="quote-text">Loading...</p>
+                        <p id="quote-author"></p>
+                    </div>
+                </div>
+                <div class="dashboard-card" id="weather-card">
+                    <h3>내 주변 날씨</h3>
+                    <div class="weather-controls">
+                        <select id="city-select">
+                            <option value="seoul">서울</option>
+                            <option value="busan">부산</option>
+                            <option value="incheon">인천</option>
+                            <option value="daegu">대구</option>
+                            <option value="daejeon">대전</option>
+                            <option value="gwangju">광주</option>
+                            <option value="ulsan">울산</option>
+                            <option value="jeju">제주</option>
+                        </select>
+                    </div>
+                    <div class="card-content" id="weather-info">
+                        <div id="weather-icon"></div>
+                        <div id="weather-temp">--°C</div>
+                        <div id="weather-desc">날씨 정보 로딩 중...</div>
+                    </div>
+                </div>
+                <div class="dashboard-card" id="countdown-card">
+                    <h3>방학 D-Day</h3>
+                    <div class="card-content">
+                        <div id="countdown-display">D-Day</div>
+                        <button id="set-date-btn">날짜 설정</button>
+                        <input type="date" id="target-date-picker"
+                            style="position: absolute; opacity: 0; pointer-events: none; bottom: 0; left: 0;">
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="projects">
+                <h2>주요 수업 도구들</h2>
+                <div class="project-grid">
+                    <!-- Project 1: Tetris -->
+                    <article class="project-card">
+                        <h3 class="project-title">클래식 테트리스</h3>
+                        <p class="project-desc">바닐라 자바스크립트와 HTML5 캔버스로 구현한 레트로 스타일 2D 테트리스 게임입니다. 점수 기록, 레벨 시스템, 다음 블록
+                            미리보기를 지원합니다.</p>
+                        <a href="./tetris/index.html" class="project-link">게임 하기 <span>→</span></a>
+                    </article>
+
+                    <!-- Project 2: Seat Selector -->
+                    <article class="project-card">
+                        <h3 class="project-title">AI 스마트 자리 배치</h3>
+                        <p class="project-desc">학생 이름을 입력하면 AI가(사실은 랜덤 알고리즘이) 자리를 자동으로 배치해줍니다. 일반형, 모둠형, 토론형 지원.</p>
+                        <a href="./seat-selector/index.html" class="project-link">배치 시작하기 <span>→</span></a>
+                    </article>
+
+                    <!-- Project 3: Timer -->
+                    <article class="project-card">
+                        <h3 class="project-title">수업 집중 타이머</h3>
+                        <p class="project-desc">남은 시간을 시각적으로 보여주는 원형 타이머입니다. 시간이 종료되면 알림이 울립니다.</p>
+                        <a href="./timer/index.html" class="project-link">타이머 열기 <span>→</span></a>
+                    </article>
+
+                    <!-- Project 4: Number Picker -->
+                    <article class="project-card">
+                        <h3 class="project-title">발표 번호 뽑기</h3>
+                        <p class="project-desc">대포를 쏘아 올려 무작위 발표 번호를 뽑습니다. 학생들에게 즐거움을 주는 뽑기 도구입니다.</p>
+                        <a href="./number-picker/index.html" class="project-link">뽑기 하러가기 <span>→</span></a>
+                    </article>
+
+                    <!-- Project 5: Scoreboard -->
+                    <article class="project-card">
+                        <h3 class="project-title">모둠 점수판</h3>
+                        <p class="project-desc">귀여운 디자인의 모둠 점수판입니다. 점수 기록과 모둠 관리가 가능합니다.</p>
+                        <a href="./scoreboard/index.html" class="project-link">점수판 열기 <span>→</span></a>
+                    </article>
+
+                    <!-- Project 6: Noise Meter -->
+                    <article class="project-card">
+                        <h3 class="project-title">교실 소음 측정기</h3>
+                        <p class="project-desc">마이크를 통해 교실의 소음을 측정하고, 시끄러우면 경고 화면을 보여줍니다.</p>
+                        <a href="./noise-meter/index.html" class="project-link">측정 시작하기 <span>→</span></a>
+                    </article>
+
+                    <!-- Project 7: Cho-sung Quiz -->
+                    <article class="project-card">
+                        <h3 class="project-title">초성 퀴즈 생성기</h3>
+                        <p class="project-desc">선생님이 입력한 단어나 문장을 초성으로 바꿔줍니다. 수업 중 퀴즈용으로 활용하세요.</p>
+                        <a href="./initial-quiz/index.html" class="project-link">퀴즈 만들기 <span>→</span></a>
+                    </article>
+
+                    <!-- Project 8: OX Quiz -->
+                    <article class="project-card">
+                        <h3 class="project-title">OX 퀴즈 판</h3>
+                        <p class="project-desc">화면에 문제를 띄우고 정답을 공개하세요. 거대한 O, X 애니메이션이 나타납니다.</p>
+                        <a href="./ox-quiz/index.html" class="project-link">퀴즈 판 열기 <span>→</span></a>
+                    </article>
+
+                    <!-- Project 9: Speed Quiz -->
+                    <article class="project-card">
+                        <h3 class="project-title">스피드 퀴즈 타이머</h3>
+                        <p class="project-desc">제한 시간 내에 많은 문제를 맞혀보세요. 타이머와 점수판이 결합된 도구입니다.</p>
+                        <a href="./speed-quiz/index.html" class="project-link">스피드 퀴즈 시작 <span>→</span></a>
+                    </article>
+
+                    <!-- Placeholder for future projects -->
+                    <article class="project-card" style="opacity: 0.7;">
+                        <h3 class="project-title">준비 중</h3>
+                        <p class="project-desc">더 흥미로운 AI 프로젝트들이 준비되고 있습니다. 기대해 주세요!</p>
+                        <span class="project-link">개발 중...</span>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Woong. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="bg-animation.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
